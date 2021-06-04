@@ -89,8 +89,11 @@ public: // interfeisas
     {
         return data[i];
     }
-    void push_back
-    (const T& t)
+    void clear()
+    {
+        uncreate();
+    }
+    void push_back(const T& t)
     {
         if (avail == limit)
         {
@@ -103,6 +106,10 @@ public: // interfeisas
     size_type size() const
     {
         return avail - data;
+    }
+    size_type capacity() const 
+    {
+        return limit - data;
     }
     iterator begin()
     {
@@ -120,12 +127,11 @@ public: // interfeisas
     {
         return avail;
     }
-// tęsinys ankstesnės skaidrės
+
 private:
-    iterator data; // kaip buvo anksčiau
-    iterator avail; // pirmasis po paskutiniojo sukonstruoto Vector elementas
-    iterator limit; // pirmasis po paskutiniojo Vector elementas
-// atminties išskyrimo valdymui
+    iterator data;
+    iterator avail; 
+    iterator limit; 
     std::allocator<T> alloc; // objektas atminties valdymui
 // išskirti atmintį (array) ir ją inicializuoti
     void create()

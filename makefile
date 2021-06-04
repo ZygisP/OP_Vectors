@@ -1,6 +1,10 @@
-main: func_vec.o
-	g++ -std=c++17 -O3 -o main main_vec.cpp func_vec.cpp
-fun:
-	g++ c- func_vec.cpp
+main:
+	g++ -std=c++17 -o main.exe main_vec.cpp func_vec.cpp mokinys.cpp
+compile:
+	g++ -c main_vec.cpp func_vec.cpp
+link:
+	g++ -o main.exe main_vec.o func_vec.o
+del:
+	rm *.o *.exe
 run:
 	./main
