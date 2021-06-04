@@ -8,7 +8,7 @@ int main() {
 
     readFromFile(p);
     writeToFiles(p);
-    p.~Vec();
+    p.clear();
 
     return 0;
 }
